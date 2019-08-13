@@ -1,10 +1,3 @@
-$background-dark: url('/stardew-valley-fair-helper/src/assets/background/stardew-dark-theme-wallpaper.png');
-$background-light: url('/stardew-valley-fair-helper/src/assets/background/stardew-light-theme-wallpaper.png');
-
-.bg-dark {
-  background-image: $background-dark;
-}
-
-.bg-light {
-  background-image: $background-light;
+app-fair-helper {
+	float: left;
 }

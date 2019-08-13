@@ -28,14 +28,15 @@ $stardew-valley-fair-helper-theme: mat-light-theme($stardew-valley-fair-helper-p
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%;}
+body { margin: 0; font-family: 'Stardew_Valley', 'arial', sans-serif; }
 
+// Fonts
 @font-face {
   font-family: 'Stardew_Valley';
   src: url(assets/fonts/StardewValley.woff) format('woff');
 }
 
-* {
-  font-family: 'Stardew_Valley', 'arial', sans-serif;
-}
+// Backgrounds
+$background-dark: url('/assets/background/stardew-dark-theme-wallpaper.png');
+$background-light: url('/assets/background/stardew-light-theme-wallpaper.png');
