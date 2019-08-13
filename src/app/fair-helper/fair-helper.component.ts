@@ -21,13 +21,12 @@ export class FairHelperComponent implements OnInit {
 
     if (typeof (FileReader) !== 'undefined') {
       const reader = new FileReader();
+      reader.readAsText(inputNode.files[0]);
 
       reader.onload = (e: any) => {
         this.srcResult = e.target.result;
+        console.log(this.srcResult);
       };
-
-      reader.readAsArrayBuffer(inputNode.files[0]);
     }
   }
-
 }
