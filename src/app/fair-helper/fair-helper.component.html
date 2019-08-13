@@ -6,8 +6,21 @@
 	</mat-card-header>
 
 	<mat-card-content>
-		Information on the feature
+		<p>By uploading your save file, this application will check your inventory and chests to find the best possible grange display for the Stardew Valley Fair.</p>
+		<p>By default, your save file will contain two versions, the <b>SaveGameInfo</b> file and one with your farmers 9 digit ID, e.g. <b>Farmer_224805264</b>. You should use the file with the 9 digit ID as the other one doesn't contain the information required for the app to work.</p>
+		<p>The Default save file locations are as follows:	</p>
+		<ul>
+			<li><b>Windows:</b> %AppData%\StardewValley\Saves\ </li>
+			<li><b>Mac OSX:</b> ~/.config/StardewValley/Saves/ </li>
+			<li><b>Linux: </b>~/.config/StardewValley/Saves/ </li>
+		</ul>
+	
 	</mat-card-content>
+
+	<mat-card-actions>
+		<button type="button" mat-button (click)="fileInput.click()"><b>IMPORT SAVE FILE</b></button>
+		<input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+	</mat-card-actions>
 </mat-card>
 
 <mat-card>
