@@ -26,10 +26,22 @@ $stardew-valley-fair-helper-theme: mat-light-theme($stardew-valley-fair-helper-p
 // that you are using.
 @include angular-material-theme($stardew-valley-fair-helper-theme);
 
-/* You can add global styles to this file, and also import other style files */
+* {
+	box-sizing: border-box;
+}
 
-html, body { height: 100%;}
-body { margin: 0; font-family: 'Stardew_Valley', 'arial', sans-serif; }
+/* You can add global styles to this file, and also import other style files */
+html {
+	height: 100%;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Stardew_Valley', 'arial', sans-serif;
+
+	background: #f7fafc;
+}
 
 // Fonts
 @font-face {
@@ -37,6 +49,3 @@ body { margin: 0; font-family: 'Stardew_Valley', 'arial', sans-serif; }
   src: url(assets/fonts/StardewValley.woff) format('woff');
 }
 
-// Backgrounds
-$background-dark: url('/assets/background/stardew-dark-theme-wallpaper.png');
-$background-light: url('/assets/background/stardew-light-theme-wallpaper.png');
