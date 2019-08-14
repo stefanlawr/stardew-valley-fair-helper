@@ -46,9 +46,7 @@ export class FairHelperComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.ITEMS[0][1]);
-  }
+  ngOnInit() {}
 
   foo(event: any) {
     console.log({ event });

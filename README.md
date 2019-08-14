@@ -1,5 +1,7 @@
 # StardewValleyFairHelper
 
+This application is my own attempt at making a tool that finds the best possible Stardew Valley fair items based on a players save file or custom input.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
 ## Development server
