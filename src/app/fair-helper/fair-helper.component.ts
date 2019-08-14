@@ -1,3 +1,4 @@
+import { Star } from './fair-helper.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FairHelperComponent implements OnInit {
   srcResult: any;
+
+  STARS: Star[] = [
+    {rarity: 0, text: 'No Star'},
+    {rarity: 1, text: 'Silver'},
+    {rarity: 2, text: 'Gold'},
+    {rarity: 3, text: 'Iridium'}
+  ];
 
   constructor() { }
 

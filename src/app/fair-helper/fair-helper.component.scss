@@ -1,27 +1,42 @@
-mat-card {
-	width: auto;
-	margin: 2rem 1rem 1rem 1rem;
-
-	@media (min-width: 1200px) {
-		width: 75%;
-		margin: 1rem auto;
-	}
+mat-form-field {
+  padding-right: 1rem;
 }
 
-.save-file-header, mat-card-avatar {
-	background-image: url('/assets/farm.png');
-	background-size: cover;
+.container {
+  width: auto;
+  margin: 2rem 1rem 1rem 1rem;
+
+  @media (min-width: 1200px) {
+    width: 75%;
+    margin: 1rem auto;
+  }
+}
+
+.save-file-header,
+mat-card-avatar {
+  background-image: url("/assets/farm.png");
+  background-size: cover;
   border-radius: 10%;
 }
 
-.load-item-header, mat-card-avatar {
-	background-image: url('/assets/corn.png');
-	background-size: cover;
+.load-item-header,
+mat-card-avatar {
+  background-image: url("/assets/corn.png");
+  background-size: cover;
   border-radius: 0%;
 }
 
-.results-header, mat-card-avatar {
-	background-image: url('/assets/star.png');
-	background-size: cover;
+.results-header,
+mat-card-avatar {
+  background-image: url("/assets/star.png");
+  background-size: cover;
   border-radius: 0%;
+}
+
+.load-item-container:first-of-type {
+  margin-top: 0rem;
+}
+
+.load-item-container {
+  margin-top: 1rem;
 }

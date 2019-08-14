@@ -1,48 +1,105 @@
-<mat-card>
-	<mat-card-header>
-		<div mat-card-avatar class="save-file-header"></div>
-		<mat-card-title><b>Read from Save File</b></mat-card-title>
-		<mat-card-subtitle>Generate an optimal display from a save file</mat-card-subtitle>
-	</mat-card-header>
+<!-- Save File Start -->
+<mat-card class="container">
+  <mat-card-header>
+    <div mat-card-avatar class="save-file-header"></div>
+    <mat-card-title><b>Read from Save File</b></mat-card-title>
+    <mat-card-subtitle
+      >Generate an optimal display from a save file</mat-card-subtitle
+    >
+  </mat-card-header>
 
-	<mat-card-content>
-		<p>By uploading your save file, this application will check your inventory and chests to find the best possible grange display for the Stardew Valley Fair.</p>
-		<p>By default, your save file will contain two versions, the <b>SaveGameInfo</b> file and one with your farmers 9 digit ID, e.g. <b>Farmer_224805264</b>. You should use the file with the 9 digit ID as the other one doesn't contain the information required for the app to work.</p>
-		<p>The Default save file locations are as follows:	</p>
-		<ul>
-			<li><b>Windows:</b> %AppData%\StardewValley\Saves\ </li>
-			<li><b>Mac OSX:</b> ~/.config/StardewValley/Saves/ </li>
-			<li><b>Linux: </b>~/.config/StardewValley/Saves/ </li>
-		</ul>
+  <mat-card-content>
+    <p>
+      By uploading your save file, this application will check your inventory
+      and chests to find the best possible grange display for the Stardew Valley
+      Fair.
+    </p>
+    <p>
+      By default, your save file will contain two versions, the
+      <b>SaveGameInfo</b> file and one with your farmers 9 digit ID, e.g.
+      <b>Farmer_224805264</b>. You should use the file with the 9 digit ID as
+      the other one doesn't contain the information required for the app to
+      work.
+    </p>
+    <p>The Default save file locations are as follows:</p>
+    <ul>
+      <li><b>Windows:</b> %AppData%\StardewValley\Saves\</li>
+      <li><b>Mac OSX:</b> ~/.config/StardewValley/Saves/</li>
+      <li><b>Linux: </b>~/.config/StardewValley/Saves/</li>
+    </ul>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button type="button" mat-button (click)="fileInput.click()">
+      <b>IMPORT SAVE FILE</b>
+    </button>
+    <input
+      hidden
+      (change)="onFileSelected()"
+      #fileInput
+      type="file"
+      id="file"
+    />
+  </mat-card-actions>
+</mat-card>
+<!-- Save File End -->
+
+<!-- Load Items Start -->
+<mat-card class="container">
+  <mat-card-header>
+    <div mat-card-avatar class="load-item-header"></div>
+    <mat-card-title><b>Load Items Manually</b></mat-card-title>
+    <mat-card-subtitle
+      >Manually select items and tiers from dropdowns</mat-card-subtitle
+    >
+  </mat-card-header>
+
+  <mat-card class="load-item-container mat-elevation-z3" *ngFor="let cards of [1,2,3,4,5,6,7,8,9]">
+		<mat-card-title> Item {{cards}}</mat-card-title>
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="Star Type">
+          <mat-option *ngFor="let stars of STARS" [value]="stars.rarity">{{
+            stars.text
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Item">
+          <mat-option *ngFor="let stars of STARS" [value]="stars.rarity">{{
+            stars.text
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Category" disabled />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Points" disabled />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Location" disabled />
+      </mat-form-field>
+    </div>
+	</mat-card>
 	
-	</mat-card-content>
-
-	<mat-card-actions>
-		<button type="button" mat-button (click)="fileInput.click()"><b>IMPORT SAVE FILE</b></button>
-		<input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
-	</mat-card-actions>
 </mat-card>
+<!-- Load Items End -->
 
-<mat-card>
-	<mat-card-header>
-		<div mat-card-avatar class="load-item-header"></div>
-		<mat-card-title><b>Load Items Manually</b></mat-card-title>
-		<mat-card-subtitle>Manually select items and tiers from dropdowns</mat-card-subtitle>
-	</mat-card-header>
+<!-- Results Start -->
+<mat-card class="container">
+  <mat-card-header>
+    <div mat-card-avatar class="results-header"></div>
+    <mat-card-title><b>Display Results</b></mat-card-title>
+    <mat-card-subtitle>The results for your grange display</mat-card-subtitle>
+  </mat-card-header>
 
-	<mat-card-content>
-		Information on the feature
-	</mat-card-content>
+  <mat-card-content>
+    Information on the feature
+  </mat-card-content>
 </mat-card>
-
-<mat-card>
-	<mat-card-header>
-		<div mat-card-avatar class="results-header"></div>
-		<mat-card-title><b>Display Results</b></mat-card-title>
-		<mat-card-subtitle>The results for your grange display</mat-card-subtitle>
-	</mat-card-header>
-
-	<mat-card-content>
-		Information on the feature
-	</mat-card-content>
-</mat-card>
+<!-- Results End -->
