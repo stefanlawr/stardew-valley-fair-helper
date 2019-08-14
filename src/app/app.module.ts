@@ -6,19 +6,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FairHelperComponent } from './fair-helper/fair-helper.component';
 import { NavComponent } from './nav/nav.component';
 import { MaterialModule } from 'src/material-module';
+import { FormsModule, FormControl } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FairHelperComponent,
-    NavComponent
-  ],
+  declarations: [AppComponent, FairHelperComponent, NavComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    FormsModule,
+    MaterialModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

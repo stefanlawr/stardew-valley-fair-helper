@@ -56,9 +56,10 @@
 
   <mat-card
     class="load-item-container mat-elevation-z3"
-    *ngFor="let cards of [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+    *ngFor="let cards of [1, 2, 3, 4, 5, 6, 7, 8, 9]; index as entry_index"
   >
     <mat-card-title> Item {{ cards }}</mat-card-title>
+
     <div>
       <mat-form-field>
         <mat-select placeholder="Star Type">
@@ -70,12 +71,16 @@
 
       <mat-form-field>
         <mat-select placeholder="Item">
-          <mat-optgroup *ngFor="let group of ITEMS" [label]="group.text">
+          <mat-optgroup
+            *ngFor="let group of ITEMS; index as group_index"
+            [label]="group.name"
+          >
             <mat-option
-              *ngFor="let item of ITEMS; index as i"
-              [value]="item.children[i].id"
-              >{{ item.children[i].text }}</mat-option
+              *ngFor="let item of group.items; index as item_index"
+              [value]="item.id"
             >
+              {{ item.text }}
+            </mat-option>
           </mat-optgroup>
         </mat-select>
       </mat-form-field>
