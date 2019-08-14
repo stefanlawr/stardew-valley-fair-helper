@@ -54,8 +54,11 @@
     >
   </mat-card-header>
 
-  <mat-card class="load-item-container mat-elevation-z3" *ngFor="let cards of [1,2,3,4,5,6,7,8,9]">
-		<mat-card-title> Item {{cards}}</mat-card-title>
+  <mat-card
+    class="load-item-container mat-elevation-z3"
+    *ngFor="let cards of [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+  >
+    <mat-card-title> Item {{ cards }}</mat-card-title>
     <div>
       <mat-form-field>
         <mat-select placeholder="Star Type">
@@ -67,9 +70,13 @@
 
       <mat-form-field>
         <mat-select placeholder="Item">
-          <mat-option *ngFor="let stars of STARS" [value]="stars.rarity">{{
-            stars.text
-          }}</mat-option>
+          <mat-optgroup *ngFor="let group of ITEMS" [label]="group.text">
+            <mat-option
+              *ngFor="let item of ITEMS; index as i"
+              [value]="item.children[i].id"
+              >{{ item.children[i].text }}</mat-option
+            >
+          </mat-optgroup>
         </mat-select>
       </mat-form-field>
 
@@ -85,8 +92,7 @@
         <input matInput placeholder="Location" disabled />
       </mat-form-field>
     </div>
-	</mat-card>
-	
+  </mat-card>
 </mat-card>
 <!-- Load Items End -->
 
